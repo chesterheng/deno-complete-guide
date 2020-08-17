@@ -19,6 +19,14 @@
     - [19. Web Developer Monthly](#19-web-developer-monthly)
     - [20. Endorsements On LinkedIN](#20-endorsements-on-linkedin)
   - [Section 3: Deno vs Node](#section-3-deno-vs-node)
+    - [21. Deno Game Changers](#21-deno-game-changers)
+    - [22. Deno Game Changers 2](#22-deno-game-changers-2)
+    - [23. Will Deno Kill NodeJS?](#23-will-deno-kill-nodejs)
+    - [24. Single Executable To Rule Them All](#24-single-executable-to-rule-them-all)
+    - [25. Deno Security](#25-deno-security)
+    - [26. Deno Permissions](#26-deno-permissions)
+    - [27. Deno Permissions 2](#27-deno-permissions-2)
+    - [28. Deno Permissions 3](#28-deno-permissions-3)
   - [Section 4: Deno Modules And Tooling](#section-4-deno-modules-and-tooling)
   - [Section 5: TypeScript?](#section-5-typescript)
   - [Section 6: Deno File I/O - Planets Project](#section-6-deno-file-io---planets-project)
@@ -181,6 +189,29 @@ When do we run the Rust code?
 **[⬆ back to top](#table-of-contents)**
 
 ## Section 3: Deno vs Node
+
+### 21. Deno Game Changers
+**[⬆ back to top](#table-of-contents)**
+
+### 22. Deno Game Changers 2
+**[⬆ back to top](#table-of-contents)**
+
+### 23. Will Deno Kill NodeJS?
+**[⬆ back to top](#table-of-contents)**
+
+### 24. Single Executable To Rule Them All
+**[⬆ back to top](#table-of-contents)**
+
+### 25. Deno Security
+**[⬆ back to top](#table-of-contents)**
+
+### 26. Deno Permissions
+**[⬆ back to top](#table-of-contents)**
+
+### 27. Deno Permissions 2
+**[⬆ back to top](#table-of-contents)**
+
+### 28. Deno Permissions 3
 **[⬆ back to top](#table-of-contents)**
 
 ## Section 4: Deno Modules And Tooling
