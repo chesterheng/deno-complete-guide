@@ -16,12 +16,9 @@
     - [15. Deno Internals And Architecture](#15-deno-internals-and-architecture)
     - [17. Deno Metrics](#17-deno-metrics)
     - [18. Exercise: Deno Architecture](#18-exercise-deno-architecture)
-    - [19. Web Developer Monthly](#19-web-developer-monthly)
-    - [20. Endorsements On LinkedIN](#20-endorsements-on-linkedin)
   - [Section 3: Deno vs Node](#section-3-deno-vs-node)
     - [21. Deno Game Changers](#21-deno-game-changers)
     - [22. Deno Game Changers 2](#22-deno-game-changers-2)
-    - [23. Will Deno Kill NodeJS?](#23-will-deno-kill-nodejs)
     - [24. Single Executable To Rule Them All](#24-single-executable-to-rule-them-all)
     - [25. Deno Security](#25-deno-security)
     - [26. Deno Permissions](#26-deno-permissions)
@@ -87,6 +84,38 @@ deno run deno.js
 deno run deno2.ts
 ```
 
+<details>
+<summary>deno.js</summary>
+
+```javascript
+const food = Deno.args[0];
+const parent = Deno.args[1];
+
+if (food === 'love' && parent === 'ryan') {
+  console.log('🦕...Deno is born!')
+} else {
+  console.log('🥚...this egg needs some love')
+}
+
+setTimeout(() => {
+  console.log('check')
+}, 1000)
+
+console.table(Deno.metrics())
+```
+
+</details>
+
+<details>
+<summary>deno2.ts</summary>
+
+```typescript
+const b: string = 'Chester'
+console.log(b)
+```
+
+</details>
+
 **[⬆ back to top](#table-of-contents)**
 
 ### 11. Quick Note: Official VS Code Plugin
@@ -104,8 +133,15 @@ deno run deno2.ts
 
 ### 12. Our First Deno App
 
-[✂️ Copy and 📋 Paste Emoji](https://getemoji.com)
-[deno doc](https://doc.deno.land/builtin/stable)
+- [✂️ Copy and 📋 Paste Emoji](https://getemoji.com)
+- [deno doc](https://doc.deno.land/builtin/stable)
+
+```console
+deno run deno.js 'love'
+```
+
+<details>
+<summary>deno.js</summary>
 
 ```javascript
 const food = Deno.args[0]
@@ -117,13 +153,18 @@ if(food === 'love') {
 }
 ```
 
-```console
-deno run deno.js 'love'
-```
+</details>
 
 **[⬆ back to top](#table-of-contents)**
 
 ### 13. Exercise: Our First Deno App
+
+```console
+deno run deno.js 'love' 'ryan'
+```
+
+<details>
+<summary>deno.js</summary>
 
 ```javascript
 const food = Deno.args[0];
@@ -133,9 +174,7 @@ if (food === 'love' && parent === 'ryan') {
 }
 ```
 
-```console
-deno run deno.js 'love' 'ryan'
-```
+</details>
 
 **[⬆ back to top](#table-of-contents)**
 
@@ -159,12 +198,21 @@ deno run deno.js 'love' 'ryan'
 
 ![](section-02/deno-matrics.jpg)
 
+```console
+deno run deno.js
+```
+
+<details>
+<summary>deno.js</summary>
+
 ```javascript
 setTimeout(() => {
   console.log('check')
   console.table(Deno.metrics())
 }, 1000)
 ```
+
+</details>
 
 **[⬆ back to top](#table-of-contents)**
 
@@ -182,36 +230,116 @@ When do we run the Rust code?
 
 **[⬆ back to top](#table-of-contents)**
 
-### 19. Web Developer Monthly
-**[⬆ back to top](#table-of-contents)**
-
-### 20. Endorsements On LinkedIN
-**[⬆ back to top](#table-of-contents)**
-
 ## Section 3: Deno vs Node
 
 ### 21. Deno Game Changers
-**[⬆ back to top](#table-of-contents)**
-
 ### 22. Deno Game Changers 2
-**[⬆ back to top](#table-of-contents)**
 
-### 23. Will Deno Kill NodeJS?
+Deno
+
+- First class TypeScript
+- [ES Modules](https://deno.land/std@0.65.0/examples)
+```javascript
+import "https://deno.land/std@0.65.0/examples/welcome.ts"
+import "https://deno.land/std@0.65.0/examples/chat/server.ts"
+```
+- Security first
+```console
+deno run --allow-net deno2.js
+```
+- ["Decentralized" modules](https://deno.land/x): developer can host modules anywhere -> 
+- [Standard Library](https://deno.land/std@0.65.0)
+- [Built In Tooling](https://deno.land/manual/tools)
+- Browser Compatible API
+  - JS can run in browser with no changes
+  - same window object with browser
+  - fetch is available
+- Single Executable: deno
+- Async returns Promises
+- Opinionated Modules: [Deno Style Guide](https://deno.land/manual/contributing/style_guide)
+
 **[⬆ back to top](#table-of-contents)**
 
 ### 24. Single Executable To Rule Them All
+
+["deno compile" into executable](https://github.com/denoland/deno/issues/986)
+
 **[⬆ back to top](#table-of-contents)**
 
 ### 25. Deno Security
+
+[Permissions for CLI](https://github.com/denoland/deno/blob/master/cli/permissions.rs)
+
+```rs
+pub allow_read: PermissionState,
+pub read_allowlist: HashSet<PathBuf>,
+pub allow_write: PermissionState,
+pub write_allowlist: HashSet<PathBuf>,
+pub allow_net: PermissionState,
+pub net_allowlist: HashSet<String>,
+pub allow_env: PermissionState,
+pub allow_run: PermissionState,
+pub allow_plugin: PermissionState,
+pub allow_hrtime: PermissionState,
+```
+
 **[⬆ back to top](#table-of-contents)**
 
 ### 26. Deno Permissions
-**[⬆ back to top](#table-of-contents)**
-
 ### 27. Deno Permissions 2
-**[⬆ back to top](#table-of-contents)**
-
 ### 28. Deno Permissions 3
+
+- Whitelisting is the practice of explicitly allowing some identified entities access to a particular privilege, service, mobility, access or recognition. It is the opposite of blacklisting.
+- [Drake — a task runner for Deno](https://github.com/srackham/drake)
+
+```console
+deno run --allow-net deno2.js
+deno run --allow-env main.ts
+deno run --allow-all main.ts
+deno run -A main.ts
+deno run -help
+deno install --allow-env main.ts
+section-03
+deno run -A Drakefile.ts hello
+```
+
+<details>
+<summary>deno2.js</summary>
+
+```javascript
+import "https://deno.land/std@0.65.0/examples/welcome.ts"
+import "https://deno.land/std@0.65.0/examples/chat/server.ts"
+```
+
+</details>
+
+<details>
+<summary>Drakefile.ts</summary>
+
+```typescript
+import { desc, run, task, sh } from "https://deno.land/x/drake@v1.2.6/mod.ts";
+
+desc("Minimal Drake task");
+task("hello", [], async function() {
+  console.log("Hello from Drake!");
+  await sh("deno run --allow-env main.ts");
+  await sh("echo Hello World");
+});
+
+run()
+```
+
+</details>
+
+<details>
+<summary>main.ts</summary>
+
+```typescript
+console.log("Hello", Deno.env.get("USER"));
+```
+
+</details>
+
 **[⬆ back to top](#table-of-contents)**
 
 ## Section 4: Deno Modules And Tooling
