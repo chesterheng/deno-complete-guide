@@ -522,6 +522,11 @@ https://deno.land/std/http/server.ts
 **[⬆ back to top](#table-of-contents)**
 
 ### 32. 3rd Party Modules
+
+- [Deno Third Party Modules](https://deno.land/x)
+- Deno do not support CommonJS
+- Deno need to know the file extension
+
 **[⬆ back to top](#table-of-contents)**
 
 ### 33. Deno Caching
