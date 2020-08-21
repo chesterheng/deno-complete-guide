@@ -399,6 +399,57 @@ console.log(denode("NODE"));
 **[⬆ back to top](#table-of-contents)**
 
 ### 30. URL Modules
+
+- [Deno Standard Library](https://deno.land/std@0.66.0)
+
+```console
+deno info deno3.js
+
+Download https://deno.land/std@0.66.0/examples/welcome.ts
+local: deno3.js
+type: JavaScript
+deps:
+deno3.js
+  ├── deno2.js
+  └── https://deno.land/std@0.66.0/examples/welcome.ts
+```
+
+```console
+deno info https://deno.land/std@0.66.0/examples/welcome.ts
+
+local: /Users/chesterheng/Library/Caches/deno/deps/https/deno.land/aaa5f7b759111e731af7b564810dc454f6ecbeb452c020834e6e6782a3fd973e
+type: TypeScript
+compiled: /Users/chesterheng/Library/Caches/deno/gen/https/deno.land/aaa5f7b759111e731af7b564810dc454f6ecbeb452c020834e6e6782a3fd973e.js
+deps:
+https://deno.land/std@0.66.0/examples/welcome.ts
+```
+
+<details>
+<summary>deno2.js</summary>
+
+```javascript
+export function denode(input) {
+  if (input.toLowerCase() === 'node') {
+    return input.split("").sort().join("")
+  }
+  return input;
+}
+```
+
+</details>
+
+<details>
+<summary>deno3.js</summary>
+
+```javascript
+import { denode } from './deno2.js'
+import "https://deno.land/std@0.66.0/examples/welcome.ts"
+
+console.log(denode("NODE"));
+```
+
+</details>
+
 **[⬆ back to top](#table-of-contents)**
 
 ### 31. Standard Library
