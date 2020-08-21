@@ -25,7 +25,22 @@
     - [27. Deno Permissions 2](#27-deno-permissions-2)
     - [28. Deno Permissions 3](#28-deno-permissions-3)
   - [Section 4: Deno Modules And Tooling](#section-4-deno-modules-and-tooling)
-  - [Section 5: TypeScript?](#section-5-typescript)
+    - [29. How Modules Work In Deno](#29-how-modules-work-in-deno)
+    - [30. URL Modules](#30-url-modules)
+    - [31. Standard Library](#31-standard-library)
+    - [32. 3rd Party Modules](#32-3rd-party-modules)
+    - [33. Deno Caching](#33-deno-caching)
+    - [34. Deno Caching 2](#34-deno-caching-2)
+    - [35. NPM for Deno](#35-npm-for-deno)
+    - [36. Managing Module Versions](#36-managing-module-versions)
+    - [37. Where the Bleep is package.json?](#37-where-the-bleep-is-packagejson)
+    - [38. Deps.ts](#38-depsts)
+    - [39. Locking Dependencies](#39-locking-dependencies)
+    - [40. Deno Upgrade](#40-deno-upgrade)
+    - [41. Reviewing Deno Modules](#41-reviewing-deno-modules)
+    - [42. Deno Tooling](#42-deno-tooling)
+    - [43. Deno Tooling 2](#43-deno-tooling-2)
+  - [Section 5: TypeScript](#section-5-typescript)
   - [Section 6: Deno File I/O - Planets Project](#section-6-deno-file-io---planets-project)
   - [Section 7: Exercise: SpaceX Launch Data](#section-7-exercise-spacex-launch-data)
   - [Section 8: NASA Project: Deno For Backend Development](#section-8-nasa-project-deno-for-backend-development)
@@ -343,9 +358,89 @@ console.log("Hello", Deno.env.get("USER"));
 **[⬆ back to top](#table-of-contents)**
 
 ## Section 4: Deno Modules And Tooling
+
+### 29. How Modules Work In Deno
+
+```console
+deno info deno3.js
+
+local: deno3.js
+type: JavaScript
+deps:
+deno3.js
+  └── deno2.js
+```
+
+<details>
+<summary>deno2.js</summary>
+
+```javascript
+export function denode(input) {
+  if (input.toLowerCase() === 'node') {
+    return input.split("").sort().join("")
+  }
+  return input;
+}
+```
+
+</details>
+
+<details>
+<summary>deno3.js</summary>
+
+```javascript
+import { denode } from './deno2.js'
+
+console.log(denode("NODE"));
+```
+
+</details>
+
 **[⬆ back to top](#table-of-contents)**
 
-## Section 5: TypeScript?
+### 30. URL Modules
+**[⬆ back to top](#table-of-contents)**
+
+### 31. Standard Library
+**[⬆ back to top](#table-of-contents)**
+
+### 32. 3rd Party Modules
+**[⬆ back to top](#table-of-contents)**
+
+### 33. Deno Caching
+**[⬆ back to top](#table-of-contents)**
+
+### 34. Deno Caching 2
+**[⬆ back to top](#table-of-contents)**
+
+### 35. NPM for Deno
+**[⬆ back to top](#table-of-contents)**
+
+### 36. Managing Module Versions
+**[⬆ back to top](#table-of-contents)**
+
+### 37. Where the Bleep is package.json?
+**[⬆ back to top](#table-of-contents)**
+
+### 38. Deps.ts
+**[⬆ back to top](#table-of-contents)**
+
+### 39. Locking Dependencies
+**[⬆ back to top](#table-of-contents)**
+
+### 40. Deno Upgrade
+**[⬆ back to top](#table-of-contents)**
+
+### 41. Reviewing Deno Modules
+**[⬆ back to top](#table-of-contents)**
+
+### 42. Deno Tooling
+**[⬆ back to top](#table-of-contents)**
+
+### 43. Deno Tooling 2
+**[⬆ back to top](#table-of-contents)**
+
+## Section 5: TypeScript
 **[⬆ back to top](#table-of-contents)**
 
 ## Section 6: Deno File I/O - Planets Project
