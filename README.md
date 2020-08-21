@@ -361,15 +361,18 @@ console.log("Hello", Deno.env.get("USER"));
 
 ### 29. How Modules Work In Deno
 
-```console
-deno info deno3.js
+<details>
+<summary>deno info deno3.js</summary>
 
+```console
 local: deno3.js
 type: JavaScript
 deps:
 deno3.js
   └── deno2.js
 ```
+
+</details>
 
 <details>
 <summary>deno2.js</summary>
@@ -400,11 +403,10 @@ console.log(denode("NODE"));
 
 ### 30. URL Modules
 
-- [Deno Standard Library](https://deno.land/std@0.66.0)
+<details>
+<summary>deno info deno3.js</summary>
 
 ```console
-deno info deno3.js
-
 Download https://deno.land/std@0.66.0/examples/welcome.ts
 local: deno3.js
 type: JavaScript
@@ -414,15 +416,20 @@ deno3.js
   └── https://deno.land/std@0.66.0/examples/welcome.ts
 ```
 
-```console
-deno info https://deno.land/std@0.66.0/examples/welcome.ts
+</details>
 
+<details>
+<summary>deno info https://deno.land/std@0.66.0/examples/welcome.ts</summary>
+
+```console
 local: /Users/chesterheng/Library/Caches/deno/deps/https/deno.land/aaa5f7b759111e731af7b564810dc454f6ecbeb452c020834e6e6782a3fd973e
 type: TypeScript
 compiled: /Users/chesterheng/Library/Caches/deno/gen/https/deno.land/aaa5f7b759111e731af7b564810dc454f6ecbeb452c020834e6e6782a3fd973e.js
 deps:
 https://deno.land/std@0.66.0/examples/welcome.ts
 ```
+
+</details>
 
 <details>
 <summary>deno2.js</summary>
@@ -453,6 +460,65 @@ console.log(denode("NODE"));
 **[⬆ back to top](#table-of-contents)**
 
 ### 31. Standard Library
+
+- [Deno Standard Library](https://deno.land/std@0.66.0)
+- Inspired by Go
+- Maintained by Deno team
+- Dependencies are with the standard library
+
+<details>
+<summary>deno info "https://deno.land/std/http/server.ts"</summary>
+
+```console
+Download https://deno.land/std/http/server.ts
+Warning Implicitly using latest version (0.66.0) for https://deno.land/std/http/server.ts
+Download https://deno.land/std@0.66.0/http/server.ts
+Download https://deno.land/std@0.66.0/encoding/utf8.ts
+Download https://deno.land/std@0.66.0/io/bufio.ts
+Download https://deno.land/std@0.66.0/_util/assert.ts
+Download https://deno.land/std@0.66.0/async/mod.ts
+Download https://deno.land/std@0.66.0/http/_io.ts
+Download https://deno.land/std@0.66.0/async/deferred.ts
+Download https://deno.land/std@0.66.0/async/delay.ts
+Download https://deno.land/std@0.66.0/async/mux_async_iterator.ts
+Download https://deno.land/std@0.66.0/async/pool.ts
+Download https://deno.land/std@0.66.0/textproto/mod.ts
+Download https://deno.land/std@0.66.0/http/http_status.ts
+Download https://deno.land/std@0.66.0/bytes/mod.ts
+local: /Users/chesterheng/Library/Caches/deno/deps/https/deno.land/41079ae77abd890bc4e9a389c6b449dda2f6c8e75955df8af2ff39094c277f04
+type: TypeScript
+compiled: /Users/chesterheng/Library/Caches/deno/gen/https/deno.land/41079ae77abd890bc4e9a389c6b449dda2f6c8e75955df8af2ff39094c277f04.js
+deps:
+https://deno.land/std/http/server.ts
+  ├── https://deno.land/std@0.66.0/encoding/utf8.ts
+  ├─┬ https://deno.land/std@0.66.0/io/bufio.ts
+  │ ├── https://deno.land/std@0.66.0/bytes/mod.ts
+  │ └── https://deno.land/std@0.66.0/_util/assert.ts
+  ├── https://deno.land/std@0.66.0/_util/assert.ts
+  ├─┬ https://deno.land/std@0.66.0/async/mod.ts
+  │ ├── https://deno.land/std@0.66.0/async/deferred.ts
+  │ ├── https://deno.land/std@0.66.0/async/delay.ts
+  │ ├─┬ https://deno.land/std@0.66.0/async/mux_async_iterator.ts
+  │ │ └── https://deno.land/std@0.66.0/async/deferred.ts
+  │ └── https://deno.land/std@0.66.0/async/pool.ts
+  └─┬ https://deno.land/std@0.66.0/http/_io.ts
+    ├── https://deno.land/std@0.66.0/io/bufio.ts
+    ├─┬ https://deno.land/std@0.66.0/textproto/mod.ts
+    │ ├── https://deno.land/std@0.66.0/bytes/mod.ts
+    │ └── https://deno.land/std@0.66.0/encoding/utf8.ts
+    ├── https://deno.land/std@0.66.0/_util/assert.ts
+    ├── https://deno.land/std@0.66.0/encoding/utf8.ts
+    ├─┬ https://deno.land/std@0.66.0/http/server.ts
+    │ ├── https://deno.land/std@0.66.0/encoding/utf8.ts
+    │ ├── https://deno.land/std@0.66.0/io/bufio.ts
+    │ ├── https://deno.land/std@0.66.0/_util/assert.ts
+    │ ├── https://deno.land/std@0.66.0/async/mod.ts
+    │ └── https://deno.land/std@0.66.0/http/_io.ts
+    └── https://deno.land/std@0.66.0/http/http_status.ts
+```
+
+</details>
+
 **[⬆ back to top](#table-of-contents)**
 
 ### 32. 3rd Party Modules
