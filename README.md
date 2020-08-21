@@ -467,7 +467,7 @@ console.log(denode("NODE"));
 - Dependencies are with the standard library
 
 <details>
-<summary>deno info "https://deno.land/std/http/server.ts"</summary>
+<summary>deno info https://deno.land/std/http/server.ts</summary>
 
 ```console
 Download https://deno.land/std/http/server.ts
@@ -530,6 +530,48 @@ https://deno.land/std/http/server.ts
 **[⬆ back to top](#table-of-contents)**
 
 ### 33. Deno Caching
+
+[Linking to third party code](https://deno.land/manual/linking_to_external_code)
+
+```console
+open $HOME/Library/Caches/deno
+```
+
+<details>
+<summary>deno run deno3.js</summary>
+
+```console
+Download https://deno.land/std@0.66.0/examples/welcome.ts
+Check deno3.js
+Welcome to Deno 🦕
+DENO
+```
+
+</details>
+
+<details>
+<summary>deno run deno3.js</summary>
+
+```console
+Check deno3.js
+Welcome to Deno 🦕
+DENO
+```
+
+</details>
+
+<details>
+<summary>deno run --reload deno3.js</summary>
+
+```console
+Download https://deno.land/std@0.66.0/examples/welcome.ts
+Check deno3.js
+Welcome to Deno 🦕
+DENO
+```
+
+</details>
+
 **[⬆ back to top](#table-of-contents)**
 
 ### 34. Deno Caching 2
